@@ -72,11 +72,9 @@ export default function Home() {
                 📹 Watch 5-min demo
               </a>
               <a
-                href="https://github.com/SimpleAmericanAccent/saa-app-web"
+                href="https://github.com/SimpleAmericanAccent/saa"
                 target="_blank"
-                onClick={() =>
-                  trackEvent("GitHub Repo Click", { repo: "saa-app-web" })
-                }
+                onClick={() => trackEvent("GitHub Repo Click", { repo: "saa" })}
               >
                 🔍 Explore the repo
               </a>
