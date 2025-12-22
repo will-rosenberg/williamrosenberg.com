@@ -89,7 +89,10 @@ export default function Home() {
                     action: "demo_access",
                     credentials_provided: true,
                   });
-                  window.open("https://app.simpleamericanaccent.com", "_blank");
+                  window.open(
+                    "https://demo.simpleamericanaccent.com",
+                    "_blank"
+                  );
                 }}
                 className="demo-button"
               >
