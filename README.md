@@ -1,1 +1,7 @@
-Hi! This is my portfolio site to get a full-stack developer job, while continuing to run my online business outside of that.
+# williamrosenberg.com
+
+Personal site and portfolio highlighting full-stack and product work.
+
+Includes a case study on building and maintaining a production accent training web app used in a real coaching workflow.
+
+Built with React, Vite, and modern frontend tooling.
