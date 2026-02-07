@@ -110,7 +110,7 @@ export default function Resume() {
       <div className="resume-container">
         <div className="resume-header">
           <h1>Will Rosenberg</h1>
-          <p>Full-Stack Engineer – Chicago, IL</p>
+          <p>Product-Focused Full-Stack Software Engineer – Chicago, IL</p>
           <p>
             <a
               href="https://williamrosenberg.com?utm_source=resume"
@@ -140,7 +140,7 @@ export default function Resume() {
         <div className="resume-body">
           <ResumeSection title="Experience">
             <ResumeExperienceorEducationItem
-              role="Founder & Full-Stack Engineer"
+              role="Founder & Full-Stack Software Engineer"
               company="Simple American Accent"
               location="Chicago, IL"
               dates="2018-Present"
@@ -148,7 +148,7 @@ export default function Resume() {
               <ul>
                 <li>
                   Built and maintain a{" "}
-                  <strong>full-stack web app used by clients</strong> for accent
+                  <strong>client-facing full-stack web app</strong> for accent
                   feedback and training
                 </li>
                 <li>
@@ -165,11 +165,11 @@ export default function Resume() {
                   server logs
                 </li>
                 <li>
-                  Product decisions informed by 7 years coaching 400+ clients
+                  Product decisions informed by 7+ years coaching 400+ clients
                   and a 200k+ audience
                 </li>
                 <li>
-                  Expanding unit testing and accessibility checks with{" "}
+                  Added unit testing and accessibility checks using{" "}
                   <strong>Jest</strong> and <strong>Storybook</strong>
                 </li>
                 <li>
@@ -196,8 +196,9 @@ export default function Resume() {
                   for 777X airplane air conditioning system
                 </li>
                 <li style={{ letterSpacing: "-0.006em" }}>
-                  <strong>Project-managed HIL test bench build</strong> (1k+
-                  signals, 50+ actuators/sensors, system integration)
+                  Project-managed HIL test bench build (
+                  <strong>1k+ signals, 50+ actuators/sensors</strong>, system
+                  integration)
                 </li>
                 <li>
                   Wrote and ran validation tests, reviewed engineering changes
@@ -237,7 +238,7 @@ export default function Resume() {
             <SkillsTable>
               <SkillsTableRow
                 label="Frontend"
-                skills="React, JavaScript, TypeScript, HTML, CSS, Tailwind, shadcn, MDX, Vite"
+                skills="React, JavaScript, TypeScript, HTML, CSS, Tailwind, Vite, shadcn"
               />
               <SkillsTableRow
                 label="Backend"
@@ -251,10 +252,7 @@ export default function Resume() {
                 label="Testing & Tooling"
                 skills="Git, GitHub, pnpm, Jest, Storybook, Postman, Prettier, ESLint"
               />
-              <SkillsTableRow
-                label="AI-Assisted Engineering"
-                skills="Cursor, ChatGPT"
-              />
+
               <SkillsTableRow
                 label="Languages"
                 skills="English (native), Portuguese & Spanish (near-native)"
