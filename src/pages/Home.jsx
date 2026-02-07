@@ -108,7 +108,7 @@ export default function Home() {
             </div> */}
             <a href="https://github.com/SimpleAmericanAccent/saa">
               <img
-                src="https://raw.githubusercontent.com/SimpleAmericanAccent/saa/refs/heads/main/docs/screenshot.png"
+                src="https://saa-website-public-files.s3.us-east-2.amazonaws.com/AA1-2.png"
                 style={{
                   maxWidth: "100%",
                   height: "auto",
