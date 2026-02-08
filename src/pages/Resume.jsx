@@ -247,7 +247,7 @@ export default function Resume() {
                     <li>
                       Build and maintain a{" "}
                       <strong>client-facing full-stack web application</strong>{" "}
-                      for audio processing, transcript annotation, & user
+                      for audio processing, transcript annotation, and user
                       training workflows
                     </li>
                     <li style={{ letterSpacing: "-0.002em" }}>
