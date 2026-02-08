@@ -9,6 +9,7 @@ export default function Home() {
   };
   return (
     <div
+      className="home-page"
       style={{
         display: "flex",
         justifyContent: "center",

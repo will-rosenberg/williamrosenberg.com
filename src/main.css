@@ -387,36 +387,36 @@ button:focus-visible {
 }
 
 @media (min-width: 900px) {
-  .maindiv {
+  .home-page .maindiv {
     max-width: 1120px;
     width: min(94vw, 1120px);
   }
 
-  .app-showcase {
+  .home-page .app-showcase {
     max-width: 1120px;
   }
 
-  .footer {
+  .home-page .footer {
     width: min(600px, 90vw);
   }
 
-  h1 {
+  .home-page h1 {
     font-size: 3.6em;
   }
 
-  h2 {
+  .home-page h2 {
     font-size: 1.6em;
   }
 
-  p {
+  .home-page p {
     font-size: 1.12em;
   }
 
-  .app-summary {
+  .home-page .app-summary {
     font-size: 1.08rem;
   }
 
-  .app-links a {
+  .home-page .app-links a {
     font-size: 1.05em;
   }
 }
