@@ -4,6 +4,7 @@ export default function Resume() {
   const baseWidthPx = 8.5 * 96;
   const baseHeightPx = 11 * 96;
   const [scale, setScale] = useState(1);
+  const isScaled = scale < 1;
 
   useEffect(() => {
     const updateScale = () => {
@@ -11,8 +12,13 @@ export default function Resume() {
       const availableHeight = window.innerHeight;
       const widthScale = availableWidth / baseWidthPx;
       const heightScale = availableHeight / baseHeightPx;
+      const shouldScale = window.matchMedia(
+        "(hover: none) and (pointer: coarse)",
+      ).matches;
       const shouldFitWidth = window.innerWidth < baseWidthPx;
-      const nextScale = Math.min(1, shouldFitWidth ? widthScale : heightScale);
+      const nextScale = shouldScale
+        ? Math.min(1, shouldFitWidth ? widthScale : heightScale)
+        : 1;
 
       setScale(Number.isFinite(nextScale) ? nextScale : 1);
     };
@@ -49,8 +55,8 @@ export default function Resume() {
             overflow: auto;
           }
           .resume-scale-wrapper {
-            position: relative;
-            overflow: hidden;
+            position: static;
+            overflow: visible;
           }
           .resume-container {
             width: 8.5in;
@@ -59,10 +65,7 @@ export default function Resume() {
             background-color: #ffffff;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform-origin: top left;
+            position: static;
           }
           .resume-header {
             display: flex;
@@ -172,18 +175,30 @@ export default function Resume() {
       </style>
       <div
         className="resume-viewport"
-        style={{ overflow: scale < 1 ? "hidden" : "auto" }}
+        style={{ overflow: isScaled ? "hidden" : "auto" }}
       >
         <div
           className="resume-scale-wrapper"
           style={{
-            width: `${baseWidthPx * scale}px`,
-            height: `${baseHeightPx * scale}px`,
+            position: isScaled ? "relative" : "static",
+            overflow: isScaled ? "hidden" : "visible",
+            width: isScaled ? `${baseWidthPx * scale}px` : "auto",
+            height: isScaled ? `${baseHeightPx * scale}px` : "auto",
           }}
         >
           <div
             className="resume-container"
-            style={{ transform: `scale(${scale})` }}
+            style={
+              isScaled
+                ? {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    transform: `scale(${scale})`,
+                    transformOrigin: "top left",
+                  }
+                : undefined
+            }
           >
             <div className="resume-header">
               <h1>Will Rosenberg</h1>
