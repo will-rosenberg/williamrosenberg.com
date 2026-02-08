@@ -137,6 +137,7 @@ export default function Home() {
           That background influences how I think about tradeoffs, reliability,
           and real-world constraints when building software.
         </p>
+        <p>Resume below for details. Happy to connect on LinkedIn.</p>
 
         <footer className="footer">
           <div className="footer-links">
