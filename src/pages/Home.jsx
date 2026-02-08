@@ -12,12 +12,12 @@ export default function Home() {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "flex-start",
+        alignItems: "center",
         minHeight: "100dvh",
-        paddingTop: "1vh",
-        paddingBottom: "1vh",
+        paddingTop: "2vh",
+        paddingBottom: "70px",
         boxSizing: "border-box",
-        overflow: "hidden",
+        overflowY: "auto",
       }}
     >
       <div className="maindiv">
@@ -34,9 +34,9 @@ export default function Home() {
           Product-Focused Full-Stack Software Engineer{" "}
         </h2>
 
-        <p style={{ textAlign: "center", marginTop: "20px" }}>
-          Built and maintain a client-facing full-stack web app for accent
-          analysis & training.
+        <p className="app-summary">
+          I built and maintain a client-facing full-stack web app for accent
+          training & analysis.
           <br />
           <span
             style={{
@@ -96,9 +96,14 @@ export default function Home() {
                 </div>
               </div>
             </div> */}
-            <a href="https://github.com/SimpleAmericanAccent/saa">
+            <a
+              href="https://github.com/SimpleAmericanAccent/saa"
+              target="_blank"
+              onClick={() => trackEvent("GitHub Repo Click", { repo: "saa" })}
+            >
               <img
                 src="https://saa-website-public-files.s3.us-east-2.amazonaws.com/AA1-2.png"
+                alt="Screenshot of the Simple American Accent app"
                 style={{
                   maxWidth: "100%",
                   height: "auto",
@@ -107,20 +112,30 @@ export default function Home() {
                 }}
               />
             </a>
+            <p className="app-caption">
+              Client name and transcript shown with permission.
+            </p>
           </div>
         </p>
-        <p style={{ textAlign: "center", marginTop: "20px" }}>
-          Founded{" "}
-          {/* <a
-            href="https://instagram.com/SimpleAmericanAccent"
-            target="_blank"
-            onClick={() =>
-              trackEvent("Instagram Business Click", { location: "hero_text" })
-            }
-          > */}
-          Simple American Accent
-          {/* </a>{" "} */} in 2018,
-          <br />a tech-enabled coaching business that has served 400+ clients.
+        <h2 style={{ marginTop: "20px" }}>Background</h2>
+        <p>
+          This software was built to support my business, Simple American
+          Accent, where I help Brazilians who want a more American accent.
+        </p>
+        <p>
+          The business has served 400+ clients, and the app supports real client
+          workflows for analysis, feedback, and practice.
+        </p>
+
+        <p>
+          Before building software for my own business, I worked as a systems
+          engineer at Boeing on large-scale aerospace systems and completed an
+          MIT Professional Education certificate in Architecture & Systems
+          Engineering.
+        </p>
+        <p>
+          That background influences how I think about tradeoffs, reliability,
+          and real-world constraints when building software.
         </p>
 
         <footer className="footer">
