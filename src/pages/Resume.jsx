@@ -247,7 +247,7 @@ export default function Resume() {
                     <li>
                       Built and maintain a{" "}
                       <strong>client-facing full-stack web app</strong> for
-                      accent feedback and training
+                      accent training and feedback
                     </li>
                     <li>
                       Tech stack: <strong>React</strong>, <strong>Node</strong>,{" "}
@@ -265,14 +265,14 @@ export default function Resume() {
                     </li>
                     <li>
                       Product decisions informed by 7+ years coaching 400+
-                      clients and a 200k+ audience
+                      clients and serving 200k+ audience
                     </li>
                     <li>
                       Added unit testing and accessibility checks using{" "}
                       <strong>Jest</strong> and <strong>Storybook</strong>
                     </li>
                     <li>
-                      Live app demo and source code available{" "}
+                      Demo video and source code available{" "}
                       <a
                         href="https://williamrosenberg.com?utm_source=resume"
                         target="_blank"
