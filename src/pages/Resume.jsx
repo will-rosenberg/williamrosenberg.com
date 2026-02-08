@@ -4,6 +4,7 @@ export default function Resume() {
   const baseWidthPx = 8.5 * 96;
   const baseHeightPx = 11 * 96;
   const [scale, setScale] = useState(1);
+  const [needsScroll, setNeedsScroll] = useState(false);
   const isScaled = scale < 1;
 
   useEffect(() => {
@@ -19,8 +20,11 @@ export default function Resume() {
       const nextScale = shouldScale
         ? Math.min(1, shouldFitWidth ? widthScale : heightScale)
         : 1;
+      const normalizedScale = Number.isFinite(nextScale) ? nextScale : 1;
+      const scaledHeight = baseHeightPx * normalizedScale;
 
-      setScale(Number.isFinite(nextScale) ? nextScale : 1);
+      setScale(normalizedScale);
+      setNeedsScroll(shouldScale && scaledHeight > window.innerHeight);
     };
 
     updateScale();
@@ -175,7 +179,7 @@ export default function Resume() {
       </style>
       <div
         className="resume-viewport"
-        style={{ overflow: isScaled ? "hidden" : "auto" }}
+        style={{ overflow: isScaled ? (needsScroll ? "auto" : "hidden") : "auto" }}
       >
         <div
           className="resume-scale-wrapper"
