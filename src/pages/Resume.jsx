@@ -245,41 +245,30 @@ export default function Resume() {
                 >
                   <ul>
                     <li>
-                      Built and maintain a{" "}
-                      <strong>client-facing full-stack web app</strong> for
-                      accent training and analysis
-                    </li>
-                    <li>
-                      Tech stack: <strong>React</strong>, <strong>Node</strong>,{" "}
-                      <strong>Express</strong>, <strong>Postgres</strong>,{" "}
-                      <strong>Prisma</strong>, deployed on{" "}
-                      <strong>Render</strong>
+                      Build and maintain a{" "}
+                      <strong>client-facing full-stack web application</strong>{" "}
+                      for audio processing, transcript annotation, & user
+                      training workflows
                     </li>
                     <li style={{ letterSpacing: "-0.002em" }}>
-                      Developed UI components and data models for audio
-                      playback, transcript annotation, and quizzes
+                      Own end-to-end feature development across frontend,
+                      backend, and database layers
                     </li>
                     <li>
-                      Iterate quickly based on client feedback, usage patterns,
-                      and server logs
+                      Implement authentication, role-based access control, and
+                      rate limiting
                     </li>
                     <li>
-                      Product decisions informed by 7+ years coaching 400+
-                      clients and serving 200k+ audience
+                      Manage deployments, database migrations, and production
+                      debugging across the stack
                     </li>
                     <li>
-                      Added unit testing and accessibility checks using{" "}
-                      <strong>Jest</strong> and <strong>Storybook</strong>
+                      Make product decisions informed by 400+ clients, usage
+                      patterns, and server logs
                     </li>
                     <li>
-                      Demo video and source code available{" "}
-                      <a
-                        href="https://williamrosenberg.com?utm_source=resume"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        here
-                      </a>
+                      Improve quality through unit tests, accessibility checks,
+                      and refactoring
                     </li>
                   </ul>
                 </ResumeExperienceorEducationItem>
