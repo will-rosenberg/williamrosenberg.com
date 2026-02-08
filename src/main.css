@@ -16,7 +16,7 @@
 .maindiv {
   /* border: 2px solid white; */
   min-width: 320px;
-  max-width: 550px;
+  max-width: 680px;
   padding: 0px 20px 0px 20px;
   margin: 0px auto;
   border-radius: 10px;
@@ -56,16 +56,17 @@ code {
 }
 
 .footer {
-  margin: 20px auto 0px auto;
+  margin: 0px auto 0px auto;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 100px;
+  border-radius: 100px 100px 0px 0px;
   display: flex;
   width: 400px;
-  position: absolute;
+  position: fixed;
   bottom: 0rem;
   left: 0;
   right: 0;
+  background-color: #141414;
   /* gap: 40px; */
   /* flex-wrap: wrap; */
   justify-content: center;
@@ -124,9 +125,15 @@ code {
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
-  max-width: 500px;
+  max-width: 620px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.app-showcase img {
+  width: 100%;
+  height: auto;
 }
 
 .app-links {
@@ -362,6 +369,37 @@ button:focus-visible {
   }
 }
 
+@media (min-width: 900px) {
+  .maindiv {
+    max-width: 1120px;
+    width: min(94vw, 1120px);
+  }
+
+  .app-showcase {
+    max-width: 1120px;
+  }
+
+  .footer {
+    width: min(600px, 90vw);
+  }
+
+  h1 {
+    font-size: 3.6em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  p {
+    font-size: 1.12em;
+  }
+
+  .app-links a {
+    font-size: 1.05em;
+  }
+}
+
 /* Extra small screens */
 @media (max-width: 480px) {
   .maindiv {
@@ -377,9 +415,9 @@ button:focus-visible {
   }
 
   h2 {
-    font-size: 1em;
+    font-size: 0.85em;
     line-height: 1;
-    margin: 0.3em 0 0.8em 0;
+    margin: 0.7em 0 0.8em 0;
   }
 
   p {
