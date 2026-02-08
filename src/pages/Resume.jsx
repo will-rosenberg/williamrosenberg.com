@@ -247,7 +247,7 @@ export default function Resume() {
                     <li>
                       Built and maintain a{" "}
                       <strong>client-facing full-stack web app</strong> for
-                      accent training and feedback
+                      accent training and analysis
                     </li>
                     <li>
                       Tech stack: <strong>React</strong>, <strong>Node</strong>,{" "}
