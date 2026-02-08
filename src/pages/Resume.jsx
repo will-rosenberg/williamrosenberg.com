@@ -87,7 +87,7 @@ export default function Resume() {
             margin-bottom: 0in;
             padding-top: 0in;
             padding-bottom: 0in;
-            line-height: 0.9;
+            line-height: 1.1;
             font-size: 3.5em;
           }
           .resume-header p {
@@ -179,7 +179,9 @@ export default function Resume() {
       </style>
       <div
         className="resume-viewport"
-        style={{ overflow: isScaled ? (needsScroll ? "auto" : "hidden") : "auto" }}
+        style={{
+          overflow: isScaled ? (needsScroll ? "auto" : "hidden") : "auto",
+        }}
       >
         <div
           className="resume-scale-wrapper"
@@ -244,25 +246,26 @@ export default function Resume() {
                   <ul>
                     <li>
                       Built and maintain a{" "}
-                      <strong>client-facing full-stack web app</strong> for accent
-                      feedback and training
+                      <strong>client-facing full-stack web app</strong> for
+                      accent feedback and training
                     </li>
                     <li>
                       Tech stack: <strong>React</strong>, <strong>Node</strong>,{" "}
                       <strong>Express</strong>, <strong>Postgres</strong>,{" "}
-                      <strong>Prisma</strong>, deployed on <strong>Render</strong>
+                      <strong>Prisma</strong>, deployed on{" "}
+                      <strong>Render</strong>
                     </li>
                     <li style={{ letterSpacing: "-0.002em" }}>
-                      Developed UI components and data models for audio playback,
-                      transcript annotation, and quizzes
+                      Developed UI components and data models for audio
+                      playback, transcript annotation, and quizzes
                     </li>
                     <li>
-                      Iterate quickly based on client feedback, usage patterns, and
-                      server logs
+                      Iterate quickly based on client feedback, usage patterns,
+                      and server logs
                     </li>
                     <li>
-                      Product decisions informed by 7+ years coaching 400+ clients
-                      and a 200k+ audience
+                      Product decisions informed by 7+ years coaching 400+
+                      clients and a 200k+ audience
                     </li>
                     <li>
                       Added unit testing and accessibility checks using{" "}
@@ -288,98 +291,101 @@ export default function Resume() {
                 >
                   <ul>
                     <li>
-                      <strong>Led design and testing of automated controls</strong>{" "}
+                      <strong>
+                        Led design and testing of automated controls
+                      </strong>{" "}
                       for 777X airplane air conditioning system
                     </li>
                     <li style={{ letterSpacing: "-0.006em" }}>
                       Project-managed HIL test bench build (
-                      <strong>1k+ signals, 50+ actuators/sensors</strong>, system
-                      integration)
+                      <strong>1k+ signals, 50+ actuators/sensors</strong>,
+                      system integration)
                     </li>
-                <li>
-                  Wrote and ran validation tests, reviewed engineering changes
-                </li>
-                <li style={{ letterSpacing: "-0.003em" }}>
-                  Represented the system in alert/indication reviews, defining
-                  data shown to pilots and maintenance
-                </li>
-                <li>
-                  Developed end-to-end understanding of requirements,
-                  specifications, and documentation
-                </li>
-                <li>
-                  Collaborated with suppliers, developers, and cross-functional
-                  teams (remote and in-person)
-                </li>
-              </ul>
-            </ResumeExperienceorEducationItem>
-            <ResumeExperienceorEducationItem
-              role="Engineering Internships"
-              company="Ethicon Endo-Surgery, Case New Holland, GE Aviation"
-              dates="2012-2013"
-            >
-              <ul>
-                <li>
-                  Developed data acquisition and control logic for a lab test
-                  system using LabVIEW
-                </li>
-                <li>
-                  Contributed to structured experiment planning, test execution,
-                  and root-cause analysis
-                </li>
-              </ul>
-            </ResumeExperienceorEducationItem>
-          </ResumeSection>
-          <ResumeSection title="Skills">
-            <SkillsTable>
-              <SkillsTableRow
-                label="Frontend"
-                skills="React, JavaScript, TypeScript, HTML, CSS, Tailwind, Vite, shadcn"
-              />
-              <SkillsTableRow
-                label="Backend"
-                skills="Node.js, Express, PostgreSQL, Prisma, REST APIs, SQL, Auth0"
-              />
-              <SkillsTableRow
-                label="Cloud & DevOps"
-                skills="Render, Cloudflare, Vercel, AWS S3"
-              />
-              <SkillsTableRow
-                label="Testing & Tooling"
-                skills="Git, GitHub, pnpm, Jest, Storybook, Postman, Prettier, ESLint"
-              />
+                    <li>
+                      Wrote and ran validation tests, reviewed engineering
+                      changes
+                    </li>
+                    <li style={{ letterSpacing: "-0.003em" }}>
+                      Represented the system in alert/indication reviews,
+                      defining data shown to pilots and maintenance
+                    </li>
+                    <li>
+                      Developed end-to-end understanding of requirements,
+                      specifications, and documentation
+                    </li>
+                    <li>
+                      Collaborated with suppliers, developers, and
+                      cross-functional teams (remote and in-person)
+                    </li>
+                  </ul>
+                </ResumeExperienceorEducationItem>
+                <ResumeExperienceorEducationItem
+                  role="Engineering Internships"
+                  company="Ethicon Endo-Surgery, Case New Holland, GE Aviation"
+                  dates="2012-2013"
+                >
+                  <ul>
+                    <li>
+                      Developed data acquisition and control logic for a lab
+                      test system using LabVIEW
+                    </li>
+                    <li>
+                      Contributed to structured experiment planning, test
+                      execution, and root-cause analysis
+                    </li>
+                  </ul>
+                </ResumeExperienceorEducationItem>
+              </ResumeSection>
+              <ResumeSection title="Skills">
+                <SkillsTable>
+                  <SkillsTableRow
+                    label="Frontend"
+                    skills="React, JavaScript, TypeScript, HTML, CSS, Tailwind, Vite, shadcn"
+                  />
+                  <SkillsTableRow
+                    label="Backend"
+                    skills="Node.js, Express, PostgreSQL, Prisma, REST APIs, SQL, Auth0"
+                  />
+                  <SkillsTableRow
+                    label="Cloud & DevOps"
+                    skills="Render, Cloudflare, Vercel, AWS S3"
+                  />
+                  <SkillsTableRow
+                    label="Testing & Tooling"
+                    skills="Git, GitHub, pnpm, Jest, Storybook, Postman, Prettier, ESLint"
+                  />
 
-              <SkillsTableRow
-                label="Languages"
-                skills="English (native), Portuguese & Spanish (near-native)"
-              />
-            </SkillsTable>
-          </ResumeSection>
-          <ResumeSection title="Education">
-            <ResumeExperienceorEducationItem
-              role="BS in Mechanical Engineering"
-              company="Iowa State University"
-              location="Ames, IA"
-              gpa="3.45/4.00"
-              dates="2010-2015"
-            ></ResumeExperienceorEducationItem>
-          </ResumeSection>
-          <ResumeSection title="Certifications">
-            <ResumeCertificationItem
-              certification="Architecture and Systems Engineering"
-              entity="MIT Professional Education"
-              dates="2017"
-            />
-            <ResumeCertificationItem
-              certification="Spanish - DELE C2 (Mastery/near-native)"
-              entity="Instituto Cervantes"
-              dates="2014"
-            />
-          </ResumeSection>
+                  <SkillsTableRow
+                    label="Languages"
+                    skills="English (native), Portuguese & Spanish (near-native)"
+                  />
+                </SkillsTable>
+              </ResumeSection>
+              <ResumeSection title="Education">
+                <ResumeExperienceorEducationItem
+                  role="BS in Mechanical Engineering"
+                  company="Iowa State University"
+                  location="Ames, IA"
+                  gpa="3.45/4.00"
+                  dates="2010-2015"
+                ></ResumeExperienceorEducationItem>
+              </ResumeSection>
+              <ResumeSection title="Certifications">
+                <ResumeCertificationItem
+                  certification="Architecture and Systems Engineering"
+                  entity="MIT Professional Education"
+                  dates="2017"
+                />
+                <ResumeCertificationItem
+                  certification="Spanish - DELE C2 (Mastery/near-native)"
+                  entity="Instituto Cervantes"
+                  dates="2014"
+                />
+              </ResumeSection>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
     </>
   );
 }
