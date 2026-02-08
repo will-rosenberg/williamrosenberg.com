@@ -118,27 +118,29 @@ export default function Home() {
             </p>
           </div>
         </p>
-        <h2 style={{ marginTop: "20px" }}>Background</h2>
-        <p>
-          This software was built to support my business, Simple American
-          Accent, where I help Brazilians who want a more American accent.
-        </p>
-        <p>
-          The business has served 400+ clients, and the app supports real client
-          workflows for analysis, feedback, and practice.
-        </p>
+        <div className="home-background">
+          <h2 style={{ marginTop: "20px" }}>Background</h2>
+          <p>
+            This software was built to support my business, Simple American
+            Accent, where I help Brazilians who want a more American accent.
+          </p>
+          <p>
+            The business has served 400+ clients, and the app supports real
+            client workflows for analysis, feedback, and practice.
+          </p>
 
-        <p>
-          Before building software for my own business, I worked as a systems
-          engineer at Boeing on large-scale aerospace systems and completed an
-          MIT Professional Education certificate in Architecture & Systems
-          Engineering.
-        </p>
-        <p>
-          That background influences how I think about tradeoffs, reliability,
-          and real-world constraints when building software.
-        </p>
-        <p>Resume below for details. Happy to connect on LinkedIn.</p>
+          <p>
+            Before building software for my own business, I worked as a systems
+            engineer at Boeing on large-scale aerospace systems and completed an
+            MIT Professional Education certificate in Architecture & Systems
+            Engineering.
+          </p>
+          <p>
+            That background influences how I think about tradeoffs, reliability,
+            and real-world constraints when building software.
+          </p>
+          <p>Resume below for details. Happy to connect on LinkedIn.</p>
+        </div>
 
         <footer className="footer">
           <div className="footer-links">

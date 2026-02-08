@@ -1,4 +1,28 @@
+import { useEffect, useState } from "react";
+
 export default function Resume() {
+  const baseWidthPx = 8.5 * 96;
+  const baseHeightPx = 11 * 96;
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const availableWidth = window.innerWidth;
+      const availableHeight = window.innerHeight;
+      const widthScale = availableWidth / baseWidthPx;
+      const heightScale = availableHeight / baseHeightPx;
+      const shouldFitWidth = window.innerWidth < baseWidthPx;
+      const nextScale = Math.min(1, shouldFitWidth ? widthScale : heightScale);
+
+      setScale(Number.isFinite(nextScale) ? nextScale : 1);
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+
+    return () => window.removeEventListener("resize", updateScale);
+  }, [baseWidthPx, baseHeightPx]);
+
   return (
     <>
       <style>
@@ -8,11 +32,25 @@ export default function Resume() {
             margin: 0in;
           }
           body {
-            display: flex;
-            justify-content: left;
+            display: block;
+            margin: 0;
+            padding: 0;
             color: #000000;
-            overflow-x: scroll;
-            overflow-y: scroll;
+            overflow: hidden;
+          }
+          .resume-viewport {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: auto;
+          }
+          .resume-scale-wrapper {
+            position: relative;
+            overflow: hidden;
           }
           .resume-container {
             width: 8.5in;
@@ -21,6 +59,10 @@ export default function Resume() {
             background-color: #ffffff;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top left;
           }
           .resume-header {
             display: flex;
@@ -105,101 +147,136 @@ export default function Resume() {
           li {
             line-height: 1.45;
           }
+          @media print {
+            body {
+              overflow: visible;
+            }
+            .resume-viewport {
+              padding: 0;
+              width: auto !important;
+              height: auto !important;
+              display: block;
+              overflow: visible !important;
+            }
+            .resume-scale-wrapper {
+              width: 8.5in !important;
+              height: 11in !important;
+              position: static;
+            }
+            .resume-container {
+              position: static;
+              transform: none !important;
+            }
+          }
         `}
       </style>
-      <div className="resume-container">
-        <div className="resume-header">
-          <h1>Will Rosenberg</h1>
-          <p>Product-Focused Full-Stack Software Engineer – Chicago, IL</p>
-          <p>
-            <a
-              href="https://williamrosenberg.com?utm_source=resume"
-              target="_blank"
-              rel="noopener"
-            >
-              williamrosenberg.com
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://github.com/will-rosenberg/"
-              target="_blank"
-              rel="noopener"
-            >
-              github.com/will-rosenberg
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://linkedin.com/in/will-rosenberg/"
-              target="_blank"
-              rel="noopener"
-            >
-              linkedin.com/in/will-rosenberg
-            </a>
-          </p>
-        </div>
-        <div className="resume-body">
-          <ResumeSection title="Experience">
-            <ResumeExperienceorEducationItem
-              role="Founder & Full-Stack Software Engineer"
-              company="Simple American Accent"
-              location="Chicago, IL"
-              dates="2018-Present"
-            >
-              <ul>
-                <li>
-                  Built and maintain a{" "}
-                  <strong>client-facing full-stack web app</strong> for accent
-                  feedback and training
-                </li>
-                <li>
-                  Tech stack: <strong>React</strong>, <strong>Node</strong>,{" "}
-                  <strong>Express</strong>, <strong>Postgres</strong>,{" "}
-                  <strong>Prisma</strong>, deployed on <strong>Render</strong>
-                </li>
-                <li style={{ letterSpacing: "-0.002em" }}>
-                  Developed UI components and data models for audio playback,
-                  transcript annotation, and quizzes
-                </li>
-                <li>
-                  Iterate quickly based on client feedback, usage patterns, and
-                  server logs
-                </li>
-                <li>
-                  Product decisions informed by 7+ years coaching 400+ clients
-                  and a 200k+ audience
-                </li>
-                <li>
-                  Added unit testing and accessibility checks using{" "}
-                  <strong>Jest</strong> and <strong>Storybook</strong>
-                </li>
-                <li>
-                  Live app demo and source code available{" "}
-                  <a
-                    href="https://williamrosenberg.com?utm_source=resume"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    here
-                  </a>
-                </li>
-              </ul>
-            </ResumeExperienceorEducationItem>
-            <ResumeExperienceorEducationItem
-              role="Systems Engineer"
-              company="Boeing Commercial Airplanes"
-              location="Everett, WA"
-              dates="2015-2018"
-            >
-              <ul>
-                <li>
-                  <strong>Led design and testing of automated controls</strong>{" "}
-                  for 777X airplane air conditioning system
-                </li>
-                <li style={{ letterSpacing: "-0.006em" }}>
-                  Project-managed HIL test bench build (
-                  <strong>1k+ signals, 50+ actuators/sensors</strong>, system
-                  integration)
-                </li>
+      <div
+        className="resume-viewport"
+        style={{ overflow: scale < 1 ? "hidden" : "auto" }}
+      >
+        <div
+          className="resume-scale-wrapper"
+          style={{
+            width: `${baseWidthPx * scale}px`,
+            height: `${baseHeightPx * scale}px`,
+          }}
+        >
+          <div
+            className="resume-container"
+            style={{ transform: `scale(${scale})` }}
+          >
+            <div className="resume-header">
+              <h1>Will Rosenberg</h1>
+              <p>Product-Focused Full-Stack Software Engineer – Chicago, IL</p>
+              <p>
+                <a
+                  href="https://williamrosenberg.com?utm_source=resume"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  williamrosenberg.com
+                </a>{" "}
+                |{" "}
+                <a
+                  href="https://github.com/will-rosenberg/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  github.com/will-rosenberg
+                </a>{" "}
+                |{" "}
+                <a
+                  href="https://linkedin.com/in/will-rosenberg/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  linkedin.com/in/will-rosenberg
+                </a>
+              </p>
+            </div>
+            <div className="resume-body">
+              <ResumeSection title="Experience">
+                <ResumeExperienceorEducationItem
+                  role="Founder & Full-Stack Software Engineer"
+                  company="Simple American Accent"
+                  location="Chicago, IL"
+                  dates="2018-Present"
+                >
+                  <ul>
+                    <li>
+                      Built and maintain a{" "}
+                      <strong>client-facing full-stack web app</strong> for accent
+                      feedback and training
+                    </li>
+                    <li>
+                      Tech stack: <strong>React</strong>, <strong>Node</strong>,{" "}
+                      <strong>Express</strong>, <strong>Postgres</strong>,{" "}
+                      <strong>Prisma</strong>, deployed on <strong>Render</strong>
+                    </li>
+                    <li style={{ letterSpacing: "-0.002em" }}>
+                      Developed UI components and data models for audio playback,
+                      transcript annotation, and quizzes
+                    </li>
+                    <li>
+                      Iterate quickly based on client feedback, usage patterns, and
+                      server logs
+                    </li>
+                    <li>
+                      Product decisions informed by 7+ years coaching 400+ clients
+                      and a 200k+ audience
+                    </li>
+                    <li>
+                      Added unit testing and accessibility checks using{" "}
+                      <strong>Jest</strong> and <strong>Storybook</strong>
+                    </li>
+                    <li>
+                      Live app demo and source code available{" "}
+                      <a
+                        href="https://williamrosenberg.com?utm_source=resume"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        here
+                      </a>
+                    </li>
+                  </ul>
+                </ResumeExperienceorEducationItem>
+                <ResumeExperienceorEducationItem
+                  role="Systems Engineer"
+                  company="Boeing Commercial Airplanes"
+                  location="Everett, WA"
+                  dates="2015-2018"
+                >
+                  <ul>
+                    <li>
+                      <strong>Led design and testing of automated controls</strong>{" "}
+                      for 777X airplane air conditioning system
+                    </li>
+                    <li style={{ letterSpacing: "-0.006em" }}>
+                      Project-managed HIL test bench build (
+                      <strong>1k+ signals, 50+ actuators/sensors</strong>, system
+                      integration)
+                    </li>
                 <li>
                   Wrote and ran validation tests, reviewed engineering changes
                 </li>
@@ -282,6 +359,8 @@ export default function Resume() {
           </ResumeSection>
         </div>
       </div>
+    </div>
+  </div>
     </>
   );
 }
