@@ -52,13 +52,13 @@ export default function Home() {
           </span>
           <div className="app-showcase">
             <div className="app-links">
-              <a
+              {/* <a
                 href="https://github.com/SimpleAmericanAccent/saa"
                 target="_blank"
                 onClick={() => trackEvent("GitHub Repo Click", { repo: "saa" })}
               >
                 🔍 Explore the repo
-              </a>
+              </a> */}
               <a
                 href="https://youtu.be/1I5FPCRFm7o"
                 target="_blank"
@@ -97,11 +97,11 @@ export default function Home() {
                 </div>
               </div>
             </div> */}
-            <a
+            {/* <a
               href="https://github.com/SimpleAmericanAccent/saa"
               target="_blank"
               onClick={() => trackEvent("GitHub Repo Click", { repo: "saa" })}
-            >
+            > */}
               <img
                 src="https://saa-website-public-files.s3.us-east-2.amazonaws.com/AA1-2.png"
                 alt="Screenshot of the Simple American Accent app"
@@ -112,7 +112,7 @@ export default function Home() {
                   marginTop: "0px",
                 }}
               />
-            </a>
+            {/* </a> */}
             <p className="app-caption">
               Client name and transcript shown with permission.
             </p>
